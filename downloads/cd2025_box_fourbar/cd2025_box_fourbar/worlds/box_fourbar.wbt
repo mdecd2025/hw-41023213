@@ -1,0 +1,43 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position -0.025132276026204006 0.21696076918527388 1.9510623280585504
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  children [
+    DEF base Solid {
+      children [
+        Shape {
+          appearance Appearance {
+          }
+          geometry Box {
+            size 1 0.1 0.1
+          }
+        }
+      ]
+    }
+    DEF joint1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+      }
+      device [
+        DEF motor1 RotationalMotor {
+          name "motor1"
+        }
+      ]
+    }
+    DEF joint4 HingeJoint {
+    }
+  ]
+  controller "fourbar_controller1"
+}
