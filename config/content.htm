@@ -128,7 +128,10 @@
 <p><img alt="" height="400" src="/images/fourbar shooter.png" width="400"/></p>
 <p></p><h2>task5</h2>
 <h3>w7</h3>
-<p></p>
+<p>建立過程中的要點:</p>
+<p>運作零件必須設定 boundingObject 與 physics 才能透過 solidReference 進行 dynamics 聯立運算</p>
+<p>link 的 boundingObject , 可以透過其 link Shape 採 USE 的方式重用.</p>
+<p>joint4 的旋轉中心則透過 solidReference 與 link3 的端點座標重合, 才能完成 closed chain 的動力約束條件模擬.</p>
 <p><img alt="" height="300" src="/images/fourbar shooter.gif" width="400"/></p>
 <ol></ol>
 <p><a href="https://mdecd2025.github.io/hw-scrum-1/downloads/fourbar_shooter_w7.7z">fourbar shooter</a></p>
