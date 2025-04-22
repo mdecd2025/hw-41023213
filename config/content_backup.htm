@@ -138,19 +138,16 @@
 <ol></ol>
 <p><a href="https://mdecd2025.github.io/hw-scrum-1/downloads/fourbar_shooter_w7.7z">fourbar shooter</a></p>
 <h3>w8</h3>
-<p>根據<span> </span><a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a><span> </span>節點的用法說明, SolidReference 可以用在 Joint 節點的 endPoint 欄位中，用來指向一個現有的 Solid 或靜態環境 &lt;static environment&gt;。通過這種方式，可以閉合機械迴圈。</p>
-<p>當指向一個 Solid 時，唯一的限制是 Solid 和 Joint 必須是某個共同上層 Solid 的後代。</p>
-<p>意思即, SolidReference 是一個引用類型，允許在 Joint 節點的 endPoint 欄位中指定某個目標。它可以指向兩種類型的對象：</p>
-<ol>
-<li>現有的 Solid：這是一個具體的實體（例如某個機械零件或組件），但這個 Solid 和 Joint 必須是某個共同上層 Solid 的後代。</li>
-<li>靜態環境 &lt;static environment&gt;：這通常指的是不動的參考框架（例如地面或固定基座）。</li>
-</ol>
-<p>根據第一個情況，若將 fourbar linkage 的 joint4 設置在 base link 的最右端，然後將 joint4 的 endPoint 欄位，設為 SolidReference 指向 link3，即可符合 Soild (link3) 與 Joint (joint4) 都是某個共同上層 Solid (base) 的後代。</p>
-<p>至於第二個情況，則可以將 fourbar linkage 的 joint4 設置在 link3 的末端，然後將 joint4 的 endPoint 欄位指向 &lt;static environment&gt;，讓 link3 的末端固定在 ground (其作用與固定在 base 節點相同)。</p>
-<p>fourbar box 四連桿機構:</p>
-<p><a href="https://mde.tw/cd2025/downloads/fourbar_box.7z">fourbar_box.7z</a><span> </span>的<span> </span><a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a><span> </span>採用第一種作法，joint4 位於 base link，然後參照指向 link3。</p>
-<p><a href="https://mde.tw/cd2025/downloads/fourbar_box_w8.7z">fourbar_box_w8.7z</a> (將 joint4 接在 link3 末端，然後 <a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a><span> </span>參照到內定的 &lt;static environment&gt;， 表示將 link3 末端的 joint4 直接固定在 base 上 (固定點)。</p>
-<h2>task6</h2>
+<p>根據<span> </span><a href="https://cyberbotics.com/doc/reference/solidreference">SolidReference</a><span> </span>節點的用法說明, SolidReference 可以用在 Joint 節點的 endPoint 欄位中，用來指向一個現有的 Solid 或靜態環境 static environment。通過這種方式，可以閉合機械迴圈。當指向一個 Solid 時，唯一的限制是 Solid 和 Joint 必須是同個<span>上層</span> <span>Solid (base)</span> 的<span>後代</span>。</p>
+<p>第一個情況，若 joint4 設置在 base link 的最右端，然後將 joint4 的 endPoint 欄位，設為 SolidReference 指向 link3，即可符合 Soild (link3) 與 Joint (joint4) 都是某個共同上層 Solid (base) 的後代。</p>
+<p><img alt="" height="151" src="/images/joint4 to base.png" width="312"/></p>
+<p></p>
+<p>第二個情況，<span>若</span> joint4 設置在 link3 的末端，然後將 joint4 的 endPoint 欄位指向 static environment，讓 link3 的末端固定在 ground (其作用與固定在 base 節點相同)。</p>
+<p><img caption="false" height="182" src="/images/joint4 to link3.png" width="317"/></p>
+<p><span> &lt;static environment&gt;：指的是不動的參考框架（例如地面或固定基座）</span></p>
+<p><span></span></p>
+<p>情況一: <a href="https://mde.tw/cd2025/downloads/fourbar_box.7z">fourbar_box.7z</a><span> </span></p>
+<p>情況二: <a href="https://mde.tw/cd2025/downloads/fourbar_box_w8.7z">fourbar_box_w8.7z</a> </p><h2>task6</h2>
 <h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
