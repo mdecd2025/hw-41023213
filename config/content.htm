@@ -163,7 +163,19 @@
 <p>情況一: <a href="https://mde.tw/cd2025/downloads/fourbar_box.7z">fourbar_box.7z</a><span> </span></p>
 <p>情況二: <a href="https://mde.tw/cd2025/downloads/fourbar_box_w8.7z">fourbar_box_w8.7z</a> </p>
 <h2>task6</h2>
-<h1>Homework</h1>
+<h3>Shooter</h3>
+<p>截至目前, 已經從<span> </span><span><a href="https://mdecd2025.github.io/hw-scrum-1/downloads/basketball_game_w13.7z">basketball_game_w13.7z</a></span><span> </span>得知如何利用平面四連桿機構進行投籃動作, 並在球通過籃框時註記得分, 也知道如何利用 supervisor 模式憑空產生球, 也能設法透過 supervisor 中的 emitter 將命令訊號送給 robot 中的 receiver.</p>
+<p>其次, <a href="https://mdecd2025.github.io/hw-scrum-1/downloads/three_digit_counter.7z">three_digit_counter.7z</a><span> </span>中利用物件的 material 顏色的改變, 建立了一個三位數的七段顯示器模擬.</p>
+<p>而<span> </span><a href="https://mde.tw/cd2025/downloads/youbot_cart_w10.7z">youbot_cart_w10.7z</a><span> </span>提供一台可以利用鍵盤靈活操控的平台車.<span> </span><a href="https://mde.tw/cd2025/downloads/youbot_cart_w12.7z">youbot_cart_w12.7z</a><span> </span>則驗證無論是在平台車上自行利用 box 或從 CAD 輸入同樣大小的零件, 可以取得相同的結果.</p>
+<p>至於<span> </span><a href="https://mde.tw/cd2025/downloads/youbot_cart_w10_websocket.7z">youbot_cart_w10_websocket.7z</a><span> </span>則驗證儘管 Webots 本身並沒有提供如 CoppeliaSim 的 Websocket Remote API 模組, 設計者仍可自行利用 Websocket 架構, 編寫 client 與 server 應用程式, 在 Webots WWW 場景串流的模式下, 讓多人可以透過瀏覽器檢視伺服器中的場景, 並利用 Websocket client 端程式發送命令, 要求 Websocket server 端的協同程式控制 Webots 場景中的物件作動.</p>
+<p>最後從<span> </span><a href="https://mde.tw/cd2025/content/Tutorial7.html">Tutorial7</a><span> </span>中得知, 要在協同產品設計流程中, 將前述各場景物件、感測器與控制程式整合成為一個能夠計時、計分且由兩位以上組員分別控制投籃動作以及籃框的移動, 最好的方式就是將各組成物件, 分別由協同組員設法建立為<span> </span><a href="https://cyberbotics.com/doc/reference/proto">PROTO</a><span> </span>物件之後, 再依各物件尺寸比例、座標系統方位、supervisor 監控、Websocket 遙控及各物件的控制程式進行協同分工後, 便可依循<span> </span><a href="https://mdecd2025.github.io/hw-scrum-1/downloads/ballShooter.7z">ballShooter.7z</a><span> </span>中的射球機構<span> </span><a href="https://cyberbotics.com/doc/reference/proto">PROTO</a><span> </span>方式, 完成投籃遊戲系統場景的設置與模擬.</p>
+<p>待完成事項:</p>
+<ol>
+<li>在場景中放入記分板, 必須採 supervisor 模式改變七段顯示器物件的顏色</li>
+<li>在籃框加入感測器, 若球入網可以將得分顯示在 supervisor 模式控制的計分板上</li>
+<li>將 <a href="https://mdecd2025.github.io/hw-scrum-1/downloads/youbot_cart_w15.7z">youbot_cart_w15.7z</a> 的 w15_shooter_stand_feed_ball.wbt 場景中的籃框平台車, 套用<span> </span><a href="https://mde.tw/cd2025/downloads/youbot_cart_w10_websocket.7z">youbot_cart_w10_websocket.7z</a> 程式控制,<span> </span>改為 Websocket 模式, 籃框移動由 client 端進行控制</li>
+<li>將目前可以自由移動的籃框平台車, 改為只能面對場域中心點為圓心進行圓周運動</li>
+</ol><h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
@@ -198,7 +210,8 @@
 <p><span>過程與心得:</span></p>
 <p><span>建立solid使用shape生成base並調整尺寸顏色<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)並在各零件分支透過pose&gt;shape調整尺寸顏色<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>link1、2、3需要開啟boundingobject pose和physics<br/>建立hingejoint4旋轉軸位置為link3與base連接點<br/>使用solidreference使該旋轉軸導向link3<br/>joint1的device建立motor<br/>使用controller選擇程式導入</span></p>
 <p><span>分支容易漏掉物理或碰撞體積，旋轉軸位置需要準確不然連桿會偏移</span></p>
-<p><span><a href="/downloads/fourbar.rar">HW1</a></span></p><h2>HW2</h2>
+<p><span><a href="/downloads/fourbar.rar">HW1</a></span></p>
+<h2>HW2</h2>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 41023213</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/fHtE3s7dGk8" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 41023213" width="640"></iframe></p>
@@ -206,14 +219,16 @@
 <p><span>過程與心得:</span></p>
 <p><span>使用solvespace繪製零件<br/>建立solid(1、2)使用cadshape導入base(1、2)零件<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)使用cadshape導入link(1、2、3)零件<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>link1、2、3需要開啟boundingobject pose和physics<br/>建立hingejoint4旋轉軸位置為link3與base連接點<br/>使用solidreference使該旋轉軸導向link3<br/>joint1的device建立motor<br/>使用controller選擇程式導入</span></p>
 <p>注意事項與HW1類似，不過零件檔轉為obj後有尺寸、位置、顏色所以在webots中不用再調整</p>
-<p><a href="/downloads/fourbar CAD.rar">HW2</a></p><h2>HW3</h2>
+<p><a href="/downloads/fourbar CAD.rar">HW2</a></p>
+<h2>HW3</h2>
 <p>HW3 (20%):<span style="background-color: #ffff00;">建立 Webots 桌上籃球遊戲機模擬系統</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 41023213</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/oW0OhwOVLC8" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 41023213" width="640"></iframe></p>
 <p><span>過程與心得:</span></p>
 <p><span>使用solvespace繪製零件<br/>建立solid使用cadshape導入base零件<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)使用cadshape導入link(1、2、3)零件<br/>link1、2、3分別為press、connector、shooter<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>建立hingejoint4設定旋轉軸位置<br/>使用solidreference使該旋轉軸導向shooter<br/>建立solid使用cadshape導入stand並建立distancesensor使用cylinder設定感測器位置<br/>建立solid使用shape建立籃球的尺寸位置<br/>建立solid使用cadshape導入floor<br/>各零件設定boundingobject pose或physics<br/>joint1的device建立motor<br/>使用controller選擇程式導入<br/></span></p>
 <p>與HW1、2不同的連桿連接方式一開始需要先想一下是怎麼運作的，以及加入了感測器和地板，但我不知道怎麼把球撿回來。</p>
-<p><a href="/downloads/basketball_game_demo.rar">HW3</a></p><h1>Midterm</h1>
+<p><a href="/downloads/basketball_game_demo.rar">HW3</a></p>
+<h1>Midterm</h1>
 <p>本課程所繳交的期中成績為學員自評之學習期望成績.</p>
 <p>期中考週的自評期望成績繳交流程:</p>
 <ol>
@@ -248,7 +263,8 @@
 <p>期中自評影片:</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/WyP9WdhKgr8" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 期中自評- 41023213" width="640"></iframe></p>
 <p></p>
-<p style="padding-left: 30px;"></p><h1>Exam</h1>
+<p style="padding-left: 30px;"></p>
+<h1>Exam</h1>
 <p>Exam1 (10%): 建立 Webots 基本物件模擬場景</p>
 <p style="padding-left: 30px;">各學員利用 Webots R2025a 套件中的 Shape 物件, 隨堂建立指定的機電系統模擬場景, 並利用 Python 程式進行互動控制.</p>
 <p>Exam2 (10%): 利用 CAD 零組件建立模擬場景 </p>
@@ -278,7 +294,8 @@
 <p><span>連桿旋轉角度為13度時的Solvespace線架構圖</span></p>
 <p><span></span></p>
 <p>心得:與HW1大致相同，多了起始角度的變化，需要將要求的角度轉換為rad</p>
-<p><a href="/downloads/Exam1.rar">Exam1</a></p><h2>Exam2</h2>
+<p><a href="/downloads/Exam1.rar">Exam1</a></p>
+<h2>Exam2</h2>
 <p>Exam2 (10%): 利用 CAD 零組件建立模擬場景</p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam2 - 41023213</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/VcJs-kMppVI" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam2 - 41023213" width="640"></iframe></p>
@@ -295,7 +312,8 @@
 <p>10.controller加入程式</p>
 <p></p>
 <p>心得:與HW2的起始角度不同但不用像exam1一樣在webots中調整角度因為cad已經調整好，但joint位置還是要設定</p>
-<p><a href="/downloads/Exam2.rar">Exam2</a></p><h2>Exam3</h2>
+<p><a href="/downloads/Exam2.rar">Exam2</a></p>
+<h2>Exam3</h2>
 <p>Exam3 (20%): Webots 機電模擬場景的協同設計</p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam3 - 41023213</p>
 <p>Exam3-1</p>
@@ -305,7 +323,8 @@
 <p><span>Exam3-3</span></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Qek8KV_KRro" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 Exam3-3 - 41023213" width="640"></iframe></p>
 <p>  <a href="/downloads/youbot_cart_w10_websocket.7z">Exam3</a></p>
-<p></p><h1>Final</h1>
+<p></p>
+<h1>Final</h1>
 <p><span>期末協同專案執行過程影片、簡報與 PDf 報告檔案 (六人一組) (30%)</span></p>
 <p><span>題目: <span style="background-color: #ccffcc;">Webots 動態投籃模擬系統的協同設計</span></span></p>
 <p><span>說明: </span></p>
