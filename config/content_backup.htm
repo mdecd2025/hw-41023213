@@ -108,6 +108,15 @@
 </div>
 <p>其中的 [remote "origin"] 表示當使用 git 指令中針對此倉儲 "origin" 是一個與遠端倉儲對應的字串代號, 代表其下兩項設定. url 代表此 "origin" 的倉儲連線網址, 而連線至此倉儲的協定是採遠端登入 (使用 Github 支援的 SSH 遠端登入協定), 且此遠端登入的帳號為 "git", 這是所有要使用 SSH 執行 git push 的用戶共同使用的登入帳號.</p>
 <p>url 設定中 "@" 之後的 "mysession" 就是宣告要使用此電腦登錄檔中所設定的 session 名稱 (代表要連線到 github.com, 且帶的 myprivatekey.ppk, 準備在登入流程中與 github.com 中 mdewcm2025 帳號下的 hw-scrum-1 倉儲擁有者 (或帶有 repo 管理權限的帳號) 所登錄的 public keys 進行認證比對, 一旦通過認證, git push 指令就可以成功將改版資料推送到指定的倉儲區域.</p>
+<h3>IPv6</h3>
+<p>已知 w4 之前的學員作業倉儲版本, 無法在 IPv6 位址設定時正確運作, 各學員必須下載<span> </span><a href="http://229.cycu.org/cmsimde_w4.7z">cmsimde_w4.7z</a>, 解開壓縮檔案後, 替換倉儲中的 cmsimde 目錄.</p>
+<p>IPv6 設定:<br/>2b 各學員固定 IPv6 分配: 2001:288:6004:17:fff1:cd25:0000:b001<br/>gateway: 2001:288:6004:17::254<br/>dns server:<br/>2001:288:6004:17::3<br/>2001:b000:168::1</p>
+<p></p>
+<p>2b 以 <a href="https://mdecd2025.github.io/hw-scrum-1/downloads/w4_2b_index.txt">w4_2b_index.txt</a> 中的序號為準, 例如: 序號為 1 的學員其固定 IPv6 位址為:</p>
+<p><span>2001:288:6004:17:fff1:cd25:0000:b001</span></p>
+<p><span>若序號為 66 其 IPv6 位址為 2001:288:6004:17:fff1:cd25:0000:b066</span></p>
+<p></p>
+<p></p>
 <h2>task3</h2>
 <p><strong>使用 Solvespace 建立平面四連桿系統零組件 (HW2)</strong></p>
 <p><span>base</span></p>
@@ -175,7 +184,8 @@
 <li>在籃框加入感測器, 若球入網可以將得分顯示在 supervisor 模式控制的計分板上</li>
 <li>將 <a href="https://mdecd2025.github.io/hw-scrum-1/downloads/youbot_cart_w15.7z">youbot_cart_w15.7z</a> 的 w15_shooter_stand_feed_ball.wbt 場景中的籃框平台車, 套用<span> </span><a href="https://mde.tw/cd2025/downloads/youbot_cart_w10_websocket.7z">youbot_cart_w10_websocket.7z</a> 程式控制,<span> </span>改為 Websocket 模式, 籃框移動由 client 端進行控制</li>
 <li>將目前可以自由移動的籃框平台車, 改為只能面對場域中心點為圓心進行圓周運動</li>
-</ol><h1>Homework</h1>
+</ol>
+<h1>Homework</h1>
 <p>作業 (30%)</p>
 <p>HW1 (5%): <span style="background-color: #ffff00;">建立由 Box 組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p style="padding-left: 30px;">part1:</p>
@@ -258,6 +268,7 @@
 <p>W13 exam1、2、3更新</p>
 <p>W14 exam3更新+檔案上傳</p>
 <p>W15 w15模擬練習</p>
+<p>W16 HW製作細節問答</p>
 <p>各週網頁內容:</p>
 <p>期中心得:</p>
 <p>期中自評影片:</p>
