@@ -109,15 +109,13 @@
 <p>其中的 [remote "origin"] 表示當使用 git 指令中針對此倉儲 "origin" 是一個與遠端倉儲對應的字串代號, 代表其下兩項設定. url 代表此 "origin" 的倉儲連線網址, 而連線至此倉儲的協定是採遠端登入 (使用 Github 支援的 SSH 遠端登入協定), 且此遠端登入的帳號為 "git", 這是所有要使用 SSH 執行 git push 的用戶共同使用的登入帳號.</p>
 <p>url 設定中 "@" 之後的 "mysession" 就是宣告要使用此電腦登錄檔中所設定的 session 名稱 (代表要連線到 github.com, 且帶的 myprivatekey.ppk, 準備在登入流程中與 github.com 中 mdewcm2025 帳號下的 hw-scrum-1 倉儲擁有者 (或帶有 repo 管理權限的帳號) 所登錄的 public keys 進行認證比對, 一旦通過認證, git push 指令就可以成功將改版資料推送到指定的倉儲區域.</p>
 <h3>IPv6</h3>
-<p>已知 w4 之前的學員作業倉儲版本, 無法在 IPv6 位址設定時正確運作, 各學員必須下載<span> </span><a href="http://229.cycu.org/cmsimde_w4.7z">cmsimde_w4.7z</a>, 解開壓縮檔案後, 替換倉儲中的 cmsimde 目錄.</p>
 <p>IPv6 設定:<br/>2b 各學員固定 IPv6 分配: 2001:288:6004:17:fff1:cd25:0000:b001<br/>gateway: 2001:288:6004:17::254<br/>dns server:<br/>2001:288:6004:17::3<br/>2001:b000:168::1</p>
 <p></p>
 <p>2b 以 <a href="https://mdecd2025.github.io/hw-scrum-1/downloads/w4_2b_index.txt">w4_2b_index.txt</a> 中的序號為準, 例如: 序號為 1 的學員其固定 IPv6 位址為:</p>
 <p><span>2001:288:6004:17:fff1:cd25:0000:b001</span></p>
 <p><span>若序號為 66 其 IPv6 位址為 2001:288:6004:17:fff1:cd25:0000:b066</span></p>
 <p></p>
-<p></p>
-<h2>task3</h2>
+<p></p><h2>task3</h2>
 <p><strong>使用 Solvespace 建立平面四連桿系統零組件 (HW2)</strong></p>
 <p><span>base</span></p>
 <p><strong><img alt="" height="100" src="/images/base.png" width="100"/></strong></p>
@@ -220,8 +218,7 @@
 <p><span>過程與心得:</span></p>
 <p><span>建立solid使用shape生成base並調整尺寸顏色<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)並在各零件分支透過pose&gt;shape調整尺寸顏色<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>link1、2、3需要開啟boundingobject pose和physics<br/>建立hingejoint4旋轉軸位置為link3與base連接點<br/>使用solidreference使該旋轉軸導向link3<br/>joint1的device建立motor<br/>使用controller選擇程式導入</span></p>
 <p><span>分支容易漏掉物理或碰撞體積，旋轉軸位置需要準確不然連桿會偏移</span></p>
-<p><span><a href="/downloads/fourbar.rar">HW1</a></span></p>
-<h2>HW2</h2>
+<p><span><a href="/downloads/HW1_41023213.rar">HW1_41023213</a></span></p><h2>HW2</h2>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 41023213</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/fHtE3s7dGk8" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 41023213" width="640"></iframe></p>
@@ -229,8 +226,7 @@
 <p><span>過程與心得:</span></p>
 <p><span>使用solvespace繪製零件<br/>建立solid(1、2)使用cadshape導入base(1、2)零件<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)使用cadshape導入link(1、2、3)零件<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>link1、2、3需要開啟boundingobject pose和physics<br/>建立hingejoint4旋轉軸位置為link3與base連接點<br/>使用solidreference使該旋轉軸導向link3<br/>joint1的device建立motor<br/>使用controller選擇程式導入</span></p>
 <p>注意事項與HW1類似，不過零件檔轉為obj後有尺寸、位置、顏色所以在webots中不用再調整</p>
-<p><a href="/downloads/fourbar CAD.rar">HW2</a></p>
-<h2>HW3</h2>
+<p><a href="/downloads/HW2_41023213.rar">HW2_41023213</a></p><h2>HW3</h2>
 <p>HW3 (20%):<span style="background-color: #ffff00;">建立 Webots 桌上籃球遊戲機模擬系統</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 41023213</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/oW0OhwOVLC8" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 HW3 - 41023213" width="640"></iframe></p>
