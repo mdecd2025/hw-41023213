@@ -159,7 +159,100 @@ img.add_border {
 <p><span>連桿旋轉角度為13度時的Solvespace線架構圖</span></p>
 <p><span></span></p>
 <p>心得:與HW1大致相同，多了起始角度的變化，需要將要求的角度轉換為rad</p>
-<p><a href="./../downloads/Exam1_41023213.rar">Exam1_41023213</a></p><br />Exam << <a href='Exam.html'>Previous</a> <a href='Exam2.html'>Next</a> >> Exam2</div>
+<p><a href="./../downloads/Exam1_41023213.rar">Exam1_41023213</a></p>
+<p>相關問題</p>
+<ol>
+<li>
+<p>製作此場景時，WorldInfo 節點有何作用？<br/> WorldInfo 節點提供場景的全域設定資訊。</p>
+</li>
+<li>
+<p>Viewpoint 節點的主要功能是什麼？<br/> Viewpoint 節點決定使用者觀看場景的視角。</p>
+</li>
+<li>
+<p>TexturedBackground 與 TexturedBackgroundLight 在場景中負責什麼？<br/> TexturedBackground 負責背景圖像顯示，TexturedBackgroundLight 調整背景光線。</p>
+</li>
+<li>
+<p>Robot 節點在此場景中代表什麼角色？<br/> Robot 節點代表場景中的機器人模型。</p>
+</li>
+<li>
+<p>base Solid 節點的功能為何？<br/> base Solid 節點作為機器人底座或支撐結構。</p>
+</li>
+<li>
+<p>Shape 與 Appearance 節點如何用於物件外觀設定？<br/> Shape 定義物件形狀，Appearance 設定材質與外觀。</p>
+</li>
+<li>
+<p>HingeJoint 節點的用途與基本參數有哪些？<br/> HingeJoint 用於連接可旋轉的零件，基本參數有 axis、anchor。</p>
+</li>
+<li>
+<p>HingeJointParameters 節點中的 axis 與 anchor 分別代表什麼？<br/> axis 是旋轉軸方向，anchor 是旋轉中心點。</p>
+</li>
+<li>
+<p>RotationalMotor 裝置如何與 HingeJoint 結合？<br/> RotationalMotor 控制 HingeJoint 的旋轉動作。</p>
+</li>
+<li>
+<p>Solid 節點與 boundingObject 的關係為何？<br/> Solid 節點的 boundingObject 定義碰撞邊界。</p>
+</li>
+<li>
+<p>link1、link2、link3 各自代表什麼結構？<br/> link1、link2、link3 分別是機器人的不同連桿結構。</p>
+</li>
+<li>
+<p>Pose 節點的功能與使用時機？<br/> Pose 節點設定物件位置與方向，常用於子節點定位。</p>
+</li>
+<li>
+<p>geometry Box 如何設定形狀尺寸？<br/> geometry Box 用 size 屬性設定長寬高尺寸。</p>
+</li>
+<li>
+<p>material Material 內的 diffuseColor 如何影響外觀？<br/> diffuseColor 控制材質的基本色彩。</p>
+</li>
+<li>
+<p>transparency 參數設定對外觀有何影響？<br/> transparency 設定物件的透明度。</p>
+</li>
+<li>
+<p>endPoint 屬性在 HingeJoint 結構中的意義？<br/> endPoint 定義 HingeJoint 的終點位置。</p>
+</li>
+<li>
+<p>Robot 節點中 children 陣列的作用？<br/> Robot 節點中 children 陣列包含機器人的子組件。</p>
+</li>
+<li>
+<p>physics Physics 節點的功能？<br/> physics 節點定義物理屬性與模擬參數。</p>
+</li>
+<li>
+<p>SolidReference 如何實現多關節結構的連結？<br/> SolidReference 用於多連結結構的關節連接。</p>
+</li>
+<li>
+<p>controller 屬性如何指定機器人控制程式？<br/> controller 屬性指定機器人的控制程式。</p>
+</li>
+<li>
+<p>DEF 與 USE 的差異與用途？<br/> DEF 是定義節點名稱，USE 是重複使用已定義節點。</p>
+</li>
+<li>
+<p>translation 與 rotation 如何決定物件在 3D 空間的位置與朝向？<br/> translation 決定位置，rotation 決定方向與角度。</p>
+</li>
+<li>
+<p>何謂 boundingObject？為何要指定？<br/> boundingObject 是用來定義碰撞範圍，避免物理錯誤。</p>
+</li>
+<li>
+<p>為什麼 link2 會包含 Pose 及多個子 Shape？<br/> link2 包含 Pose 與多 Shape 以組合複雜形狀。</p>
+</li>
+<li>
+<p>anchor 參數如何影響關節的運動中心？<br/> anchor 決定關節的旋轉中心點位置。</p>
+</li>
+<li>
+<p>四連桿結構在此場景的設計意圖為何？<br/> 四連桿結構用於模擬複雜的機械連桿運動。</p>
+</li>
+<li>
+<p>如何在 Webots 檢查各關節的運動範圍？<br/> 可在 Webots 中利用關節設定檢查運動範圍。</p>
+</li>
+<li>
+<p>若要讓 link3 可動，需在何處設定馬達？<br/> 讓 link3 可動需在其 HingeJoint 中設定馬達。</p>
+</li>
+<li>
+<p>場景中透明的 base 有什麼作用？<br/> 透明的 base 作為視覺上的參考底座。</p>
+</li>
+<li>
+<p>製作此場景時，應注意哪些結構層級與命名規則？<br/> 製作場景時應保持結構清晰與命名一致。</p>
+</li>
+</ol><br />Exam << <a href='Exam.html'>Previous</a> <a href='Exam2.html'>Next</a> >> Exam2</div>
         
     <!-- footer -->
       <div class="container">

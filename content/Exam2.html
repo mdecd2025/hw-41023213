@@ -159,7 +159,100 @@ img.add_border {
 <p>10.controller加入程式</p>
 <p></p>
 <p>心得:與HW2的起始角度不同但不用像exam1一樣在webots中調整角度因為cad已經調整好，但joint位置還是要設定</p>
-<p><a href="./../downloads/Exam2_41023213.rar">Exam2_41023213</a></p><br />Exam1 << <a href='Exam1.html'>Previous</a> <a href='Exam3.html'>Next</a> >> Exam3</div>
+<p><a href="./../downloads/Exam2_41023213.rar">Exam2_41023213</a></p>
+<p>相關問題</p>
+<ol>
+<li>
+<p>WorldInfo 節點的作用為何？<br/> WorldInfo 節點提供場景全域設定與元資料。</p>
+</li>
+<li>
+<p>Viewpoint 節點設計時需考慮哪些參數？<br/> 需考慮 position、orientation 與 fieldOfView 等參數。</p>
+</li>
+<li>
+<p>TexturedBackground 與 TexturedBackgroundLight 在場景中的功能？<br/> TexturedBackground 負責背景影像，TexturedBackgroundLight 控制背景光線效果。</p>
+</li>
+<li>
+<p>為什麼需要使用 EXTERNPROTO 來引用背景相關的 PROTO？<br/> 可重用外部定義的 PROTO 節點，保持場景簡潔。</p>
+</li>
+<li>
+<p>場景中為何有兩個 BASE（BASE 與 BASE2）？<br/> 可能區分不同底座或不同功能的基座結構。</p>
+</li>
+<li>
+<p>CadShape 節點如何使用，其作用與限制為何？<br/> 用於導入 CAD 模型，限制在於檔案格式與渲染效能。</p>
+</li>
+<li>
+<p>Mesh 作為 boundingObject 有什麼效果？<br/> 能更精確定義碰撞範圍，提高物理模擬精度。</p>
+</li>
+<li>
+<p>資料夾路徑 "../split_parts/" 的用途為何？<br/> 存放分割零件的外部模型檔案。</p>
+</li>
+<li>
+<p>Robot 節點的結構和功能？<br/> 包含機器人所有組件，管理控制與物理屬性。</p>
+</li>
+<li>
+<p>HingeJoint 節點在本結構中如何應用？<br/> 用於連接可旋轉的連桿，實現關節運動。</p>
+</li>
+<li>
+<p>HingeJointParameters 的 axis 與 anchor 參數說明？<br/> axis 定義旋轉軸方向，anchor 定義旋轉中心位置。</p>
+</li>
+<li>
+<p>RotationalMotor 的功能是什麼，如何與關節對應？<br/> 控制關節旋轉速度與力矩，連接對應 HingeJoint。</p>
+</li>
+<li>
+<p>SolidReference 的用途與設計意義？<br/> 用於引用其他 Solid，實現多連桿連結。</p>
+</li>
+<li>
+<p>為什麼每個連桿（link）都需要 physics 與 boundingObject？<br/> 提供物理屬性與碰撞邊界，確保模擬真實性。</p>
+</li>
+<li>
+<p>name 屬性在 Solid 與 Robot 節點中的差異？<br/> Solid 的 name 表示零件名稱，Robot 的 name 表示整體機器人。</p>
+</li>
+<li>
+<p>JOINT1~JOINT4 分別對應機構的哪個部位？<br/> 對應機構中的不同旋轉關節位置。</p>
+</li>
+<li>
+<p>anchor 參數對機構運動的實際影響？<br/> 決定關節旋轉的固定點位置與運動軌跡。</p>
+</li>
+<li>
+<p>DEF 與 USE 的差異與用途？<br/> DEF 定義節點，USE 重複使用已定義節點。</p>
+</li>
+<li>
+<p>場景中 LINK1、LINK2、LINK3 的結構意義？<br/> 表示機構中的不同連桿層級與連結。</p>
+</li>
+<li>
+<p>為何要將外部 CAD 檔案（obj）導入 Webots？<br/> 提高模型細節與真實感。</p>
+</li>
+<li>
+<p>如何在 Webots 中檢查導入 CAD 物件的碰撞情形？<br/> 使用碰撞檢測工具與 boundingObject 設定。</p>
+</li>
+<li>
+<p>controller 屬性如何讓機器人執行指定程式？<br/> 指定控制程式的名稱，啟動對應控制邏輯。</p>
+</li>
+<li>
+<p>如果要更改關節旋轉範圍，該修改哪些參數？<br/> 修改 HingeJointParameters 中的範圍限制參數。</p>
+</li>
+<li>
+<p>如何確保多個 link 結構組裝時不產生重疊？<br/> 調整 translation 與 rotation，並使用 Pose 精確定位。</p>
+</li>
+<li>
+<p>若要讓 LINK3 可由 JOINT3 控制，需注意哪些設定？<br/> 確保 JOINT3 關聯到 LINK3 並配置正確馬達。</p>
+</li>
+<li>
+<p>機構結構層級在 VRML/WBT 檔案中的重要性？<br/> 影響繼承關係與物理模擬的正確性。</p>
+</li>
+<li>
+<p>若 CAD 檔案位置錯誤或缺失，Webots 會怎麼處理？<br/> 模型無法載入並顯示錯誤警告。</p>
+</li>
+<li>
+<p>如何於場景內為各零件添加材質或調整外觀？<br/> 修改 Appearance 節點的材質屬性如 diffuseColor。</p>
+</li>
+<li>
+<p>Viewpoint 的 orientation 和 position 如何影響觀察？<br/> position 決定視角位置，orientation 決定視角方向。</p>
+</li>
+<li>
+<p>製作此一場景時，需注意哪些命名與結構規範？<br/> 保持命名一致性與層級清晰，方便管理與調試。</p>
+</li>
+</ol><br />Exam1 << <a href='Exam1.html'>Previous</a> <a href='Exam3.html'>Next</a> >> Exam3</div>
         
     <!-- footer -->
       <div class="container">
