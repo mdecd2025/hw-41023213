@@ -150,7 +150,39 @@ img.add_border {
 <p><span>過程與心得:</span></p>
 <p><span>使用solvespace繪製零件<br/>建立solid(1、2)使用cadshape導入base(1、2)零件<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)使用cadshape導入link(1、2、3)零件<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>link1、2、3需要開啟boundingobject pose和physics<br/>建立hingejoint4旋轉軸位置為link3與base連接點<br/>使用solidreference使該旋轉軸導向link3<br/>joint1的device建立motor<br/>使用controller選擇程式導入</span></p>
 <p>注意事項與HW1類似，不過零件檔轉為obj後有尺寸、位置、顏色所以在webots中不用再調整</p>
-<p><a href="./../downloads/HW2_41023213.rar">HW2_41023213</a></p><br />HW1 << <a href='HW1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
+<p><a href="./../downloads/HW2_41023213.rar">HW2_41023213</a></p>
+<p></p>
+<p>相關問題</p>
+<p><span>Tutorial3</span><br/>1.Tutorial3 的主要學習目標是什麼？<br/>→ 學會使用地面感測器偵測顏色並控制機器人反應。</p>
+<p>2.在 Tutorial3 中，如何讓機器人偵測地面顏色？<br/>→ 使用 ground sensors 並讀取其數值判斷顏色。</p>
+<p>3.Ground sensors 在 Webots 裡的作用為何？<br/>→ 用來感測地面反射率，判斷顏色差異。</p>
+<p>4.如何在程式中取得 ground sensor 的數值？<br/>→ 使用 getValue() 函數搭配 enable() 啟用感測器。</p>
+<p>5.Tutorial3 中的 e-puck 機器人如何根據地面顏色改變行為？<br/>→ 看到黑線就停下或轉彎，其他情況繼續前進。</p>
+<p>6.為什麼要對 ground sensor 的數值進行校正（calibration）？<br/>→ 提高準確性，避免誤判地面顏色。</p>
+<p>7.如何設定 ground sensor 的 sampling period？<br/>→ 用 enable(timestep) 設定取樣時間。</p>
+<p>8.e-puck 機器人可以偵測哪些顏色？如何判斷？<br/>→ 黑與白，透過感測值大小判斷。</p>
+<p>9.Tutorial3 如何讓 e-puck 在遇到黑線時做出反應？<br/>→ 判斷感測值低於閾值即停止或轉彎。</p>
+<p>10.若地面顏色偵測判斷有誤，可能原因有哪些？<br/>→ 校正不足、光線問題、地圖不清楚。</p>
+<p>Tutorial4<br/>1.Tutorial4 的核心任務是什麼？<br/>→ 使用距離感測器讓機器人避開障礙物。</p>
+<p>2.如何讓機器人偵測牆壁或障礙物？<br/>→ 透過紅外線距離感測器讀取前方障礙。</p>
+<p>3.Webots 的距離感測器（DistanceSensor）如何運作？<br/>→ 根據紅外線反射量決定物體距離。</p>
+<p>4.如何在程式中啟用並讀取 DistanceSensor 的數值？<br/>→ 用 enable() 啟用，再用 getValue() 讀取。</p>
+<p>5.Tutorial4 中，e-puck 機器人如何實作避障行為？<br/>→ 若偵測到障礙物即調整左右馬達速度改變方向。</p>
+<p>6.距離感測器數值的單位是什麼？如何轉換？<br/>→ 無單位，為原始值（0~4096），可依需要對照距離。</p>
+<p>7.如何設定距離感測器的 sampling period？<br/>→ 用 enable(timestep) 設定。</p>
+<p>8.當機器人同時偵測到左、右兩側有障礙物時，應如何設計行為？<br/>→ 設定優先轉向或原地旋轉。</p>
+<p>9.為什麼避障時要考慮多個感測器的數值？<br/>→ 提升準確度，避免單一誤判。</p>
+<p>10.Tutorial4 若機器人無法正確避障，可能的解決方法有哪些？<br/>→ 檢查感測器位置、程式邏輯、感測值門檻。</p>
+<p><span>Tutorial5</span><br/>1.Tutorial5 的主要內容主題為何？<br/>→ 結合多感測器控制機器人完成多任務行為。</p>
+<p>2.如何讓機器人依照不同地面顏色或障礙物狀態做出不同反應？<br/>→ 撰寫條件式依據感測值判斷並執行對應行動。</p>
+<p>3.Tutorial5 中如何結合多種感測器進行複雜任務？<br/>→ 同時讀取地面與距離感測器數據進行行為決策。</p>
+<p>4.如何設計機器人巡線並同時避障？<br/>→ 主邏輯以巡線為主，遇障礙時進入避障模式。</p>
+<p>5.若多種感測器回報衝突訊息，程式該如何決策？<br/>→ 設定感測器優先順序或使用狀態機切換行為。</p>
+<p>6.在 Tutorial5 裡，機器人如何完成任務流程的狀態切換？<br/>→ 使用有限狀態機（FSM）根據感測輸入轉換狀態。</p>
+<p>7.如何在程式中設計有限狀態機（FSM）？<br/>→ 定義多個狀態與轉換條件，用 if-else 或 switch 控制流程。</p>
+<p>8.Tutorial5 的挑戰題目有哪些？如何著手解決？<br/>→ 如巡線+避障，可拆解子任務、定義清楚的狀態流程。</p>
+<p>9.若要讓機器人自主完成一個完整路徑的巡邏任務，應加入哪些功能？<br/>→ 路徑追蹤、避障、狀態切換與環境辨識。</p>
+<p>10綜合 Tutorial3~5，請說明感測器資料融合（sensor fusion）的意義與應用。<br/>→ 將不同感測器資訊整合，做出更精確決策，提高自主行動能力。</p><br />HW1 << <a href='HW1.html'>Previous</a> <a href='HW3.html'>Next</a> >> HW3</div>
         
     <!-- footer -->
       <div class="container">
