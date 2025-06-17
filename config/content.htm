@@ -218,7 +218,44 @@
 <p><span>過程與心得:</span></p>
 <p><span>建立solid使用shape生成base並調整尺寸顏色<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)並在各零件分支透過pose&gt;shape調整尺寸顏色<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>link1、2、3需要開啟boundingobject pose和physics<br/>建立hingejoint4旋轉軸位置為link3與base連接點<br/>使用solidreference使該旋轉軸導向link3<br/>joint1的device建立motor<br/>使用controller選擇程式導入</span></p>
 <p><span>分支容易漏掉物理或碰撞體積，旋轉軸位置需要準確不然連桿會偏移</span></p>
-<p><span><a href="/downloads/HW1_41023213.rar">HW1_41023213</a></span></p><h2>HW2</h2>
+<p><span><a href="/downloads/HW1_41023213.rar">HW1_41023213</a></span></p>
+<p><span></span></p>
+<p><span>相關問題</span></p>
+<p>1. 在製作 HW1 之前是否實際練習 Tutorial1 與 Tutorial2？<br/>是</p>
+<p>2. Webots 是什麼樣的軟體？它主要用途為何？<br/>Webots 是一套開源的 3D 機器人模擬平台，用來建構虛擬世界、設計機器人、模擬感測器與致動器，並進行機器人控制程式的開發與測試，常用於教育與研究。</p>
+<p>3. 在 Tutorial1 中，學習者需要操作的主要機器人模型名稱是什麼？<br/>e-puck 機器人，是一種小型、輪型移動機器人，配備有紅外線感測器與輪型馬達。</p>
+<p>4. 如何在 Webots 中建立並執行一個新的模擬世界（world）？<br/>可透過 File &gt; New World 建立新模擬世界，於場景樹中新增地板、機器人與物件，儲存為 .wbt 檔後，點擊「播放」按鈕執行模擬。</p>
+<p>5. 請說明如何讓機器人在模擬中移動，並指出相關的程式控制方式。<br/>在控制器程式中，需透過 robot.getDevice() 取得馬達控制器並設為 setPosition(float('inf'))，然後使用 setVelocity() 指定速度以控制移動。</p>
+<p>6. Tutorial1 中，學習者需要修改哪些參數或檔案來控制機器人的行為？<br/>主要修改控制器程式碼中的速度參數（馬達轉速）與感測器啟用設定，控制機器人移動或反應行為。</p>
+<p>7. 請簡述 Webots 控制器（controller）的功能及其與機器人的關係。<br/>控制器是機器人的「大腦」，負責接收感測器資料、進行邏輯運算、並下達馬達等致動器的控制指令；每個機器人對應一個控制器。</p>
+<p>8. 在 Tutorial2 中，機器人需要完成什麼樣的任務或行為？<br/>實作避障行為：透過紅外線感測器偵測物體，當偵測到前方有障礙時改變前進方向。</p>
+<p>9. Webots 中的 "Supervisor" 是什麼？它與一般機器人控制器有何不同？<br/>Supervisor 是特殊控制器，可操控整個模擬環境，如重設位置、生成物件、監控狀態。與一般機器人控制器不同的是，它不受限於單一機器人。</p>
+<p>10. 請說明如何在 Webots 中進行感測器數據的讀取與應用（例如距離感測器、攝影機）。<br/>使用 getDevice() 取得感測器，再呼叫 enable(timestep) 啟用。接著可在主迴圈中透過 getValue() 取得感測資料。</p>
+<p>11. 若要延伸 Tutorial2 讓機器人具備自主避障能力，你會怎麼設計與實作？<br/>設計邏輯判斷左右感測器讀值，若某側值過高（表示接近障礙），即控制馬達轉向避開該方向；可加入非對稱轉動策略以模擬更智慧的避障。</p>
+<p>12. 請說明 Webots 中「時間步長（timestep）」的意義，以及它對模擬的影響。<br/>時間步長是模擬更新的間隔時間（毫秒），會影響模擬精度與效能。過小會增加負擔，過大可能導致物理或控制不穩定。</p>
+<p>13. 如何在 Webots 中為機器人新增感測器？請說明基本步驟。<br/>在 .wbt 檔中（或 PROTO 中）編輯場景樹，於機器人節點下新增感測器節點（如 DistanceSensor），並指定名稱，在程式中對應讀取即可。</p>
+<p>14. 請說明如何將 Webots 控制器程式從 Python 改為 C 語言，並指出相關設定。<br/>建立新的 C 控制器檔案（.c），以 controller C API 撰寫邏輯。到機器人屬性中設定 controller 欄位為該 C 控制器名稱，並在 Makefile 編譯。</p>
+<p>15. Tutorial1、2 中，若控制器程式有語法錯誤時，Webots 會如何反應？學員該如何排除？<br/>控制器將無法啟動，Webots console 會顯示錯誤訊息（紅字）。應根據錯誤提示修正語法，如變數未定義、括號錯誤等。</p>
+<p>16. 如何將 Webots 世界（world）或機器人設定檔分享給他人，確保對方可順利開啟模擬？<br/>打包 .wbt 世界檔、控制器程式碼、PROTO 檔案與資源檔（textures、sounds 等），可壓縮為 zip 或上傳 GitHub 提供完整路徑。</p>
+<p>17. 如果想讓機器人在模擬時產生聲音或播放音樂，Webots 提供哪些方法？<br/>可使用 Speaker 節點，控制器中透過 speaker.playSound() 播放聲音檔案（支援 .wav、.mp3）。需先將音檔加入專案目錄。</p>
+<p>18. 請說明如何在 Webots 中同時操作多個機器人，並讓它們各自執行不同控制器。<br/>新增多個機器人節點，為每個指定不同控制器檔案，在各自程式中控制其行為。需在 world 檔與控制器資料夾下妥善配置。</p>
+<p>19. 在 Webots 控制器中，如何獲得機器人的當前座標位置與朝向？<br/>使用 Supervisor 控制器並呼叫 getSelf().getField('translation').getSFVec3f() 與 getSelf().getField('rotation').getSFRotation()。</p>
+<p>20. 請說明 Webots 控制器中感測器資料的單位（例如距離感測器、加速度計），以及如何正確解讀。<br/>距離感測器為「原始數值」或距離（m）；加速度計為 m/s²。通常需查閱感測器解析度與最大值後進行換算或校正。</p>
+<p>21. 如果想要錄製 Webots 模擬畫面並輸出成影片檔，該如何操作？<br/>可使用 Movie &gt; Start recording 功能錄製影片，完成後匯出為 .mp4 檔；也可透過程式控制使用 Supervisor.movieStartRecording()。</p>
+<p>22. Webots 中的 PROTO 文件有什麼作用？與 world 檔（.wbt）的關係為何？<br/>PROTO 是自定義模型的模組化描述檔，可重複使用；.wbt 則為場景實例檔。.wbt 可引用 .proto 來組合機器人與物件。</p>
+<p>23. 請說明如何在 Webots 中設定機器人的初始位置和方向。<br/>在世界編輯器中選擇機器人節點，修改 translation 與 rotation 欄位（或使用 Supervisor 控制器程式設定位移）。</p>
+<p>24. 在 Tutorial1 或 Tutorial2 中，如何讓機器人執行預設外的自訂動作？<br/>在控制器程式中撰寫額外邏輯（如偵測到某感測值時轉彎），或改變移動策略（速度、方向改變）。</p>
+<p>25. Webots 支援哪些主流程控制語言？各有何優缺點？<br/>支援 C、C++、Python、Java、MATLAB。</p>
+<p>Python：語法簡潔，適合初學者。</p>
+<p>C/C++：效率高，適合複雜任務。</p>
+<p>Java：跨平台好，但開發速度慢。</p>
+<p>MATLAB：適合數學與控制理論模擬。</p>
+<p>26. 機器人控制器程式如何與其他程式（如資料記錄、遠端伺服器）進行通訊？<br/>可使用 socket、HTTP、MQTT 等協定與外部系統通訊；也可寫入資料檔（.csv）以供後續分析。</p>
+<p>27. Webots 的模擬世界中燈光和陰影設定如何影響感測器或相機的數據？<br/>光源影響相機與光感測器的輸出。過暗或過亮會導致數據不準，需調整光源位置、強度，或啟用 HDR 模式以穩定輸出。</p>
+<p>28. 如何在 Webots 中調整機器人或感測器的物理參數（如質量、摩擦係數）？<br/>編輯 .wbt 或 .proto 中的 Physics 欄位，包括 mass、friction、inertia 等參數，可影響移動與碰撞效果。</p>
+<p>29. 請說明如何使用 Webots 的 Console 與 Debug 工具協助程式錯誤排除。<br/>使用 console 輸出 print() 來除錯；也可使用 Webots &gt; View &gt; Console 查看執行錯誤、程式語法錯誤或感測器讀值。</p>
+<p>30. Tutorial1、2 裡的機器人遇到物體時，碰撞偵測機制如何運作？<br/>透過距離感測器（如紅外線）量測前方物體距離，不一定產生真實物理碰撞，須搭配感測資料與邏輯設計實現避障。</p>
+<p>31. 若要將 Webots 模擬結果導出並進行數據分析，你會選擇哪些方法與工具？<br/>可將感測器資料寫入 CSV 檔，再用 Python（Pandas/Matplotlib）、Excel 或 MATLAB 分析與視覺化。</p><h2>HW2</h2>
 <p>HW2 (5%): <span style="background-color: #ffff00;">建立由 CAD 繪製零件組成的平面四連桿機構 Webots 模擬場景</span></p>
 <p>操作影片標題: 國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 41023213</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="360" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/fHtE3s7dGk8" title="國立虎尾科技大學 - 機械設計工程系 - cd2025 HW2 - 41023213" width="640"></iframe></p>
