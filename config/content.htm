@@ -221,6 +221,7 @@
 <p><span><a href="/downloads/HW1_41023213.rar">HW1_41023213</a></span></p>
 <p><span></span></p>
 <p><span>相關問題</span></p>
+<p><span><a href="https://mde.tw/cd2025/content/Stage1.html">https://mde.tw/cd2025/content/Stage1.html</a><span> </span></span></p>
 <p>1. 在製作 HW1 之前是否實際練習 Tutorial1 與 Tutorial2？<br/>是</p>
 <p>2. Webots 是什麼樣的軟體？它主要用途為何？<br/>Webots 是一套開源的 3D 機器人模擬平台，用來建構虛擬世界、設計機器人、模擬感測器與致動器，並進行機器人控制程式的開發與測試，常用於教育與研究。</p>
 <p>3. 在 Tutorial1 中，學習者需要操作的主要機器人模型名稱是什麼？<br/>e-puck 機器人，是一種小型、輪型移動機器人，配備有紅外線感測器與輪型馬達。</p>
@@ -266,6 +267,7 @@
 <p><a href="/downloads/HW2_41023213.rar">HW2_41023213</a></p>
 <p></p>
 <p>相關問題</p>
+<p><a href="https://mde.tw/cd2025/content/Stage2.html">https://mde.tw/cd2025/content/Stage2.html</a><span> </span></p>
 <p><span>Tutorial3</span><br/>1.Tutorial3 的主要學習目標是什麼？<br/>→ 學會使用地面感測器偵測顏色並控制機器人反應。</p>
 <p>2.在 Tutorial3 中，如何讓機器人偵測地面顏色？<br/>→ 使用 ground sensors 並讀取其數值判斷顏色。</p>
 <p>3.Ground sensors 在 Webots 裡的作用為何？<br/>→ 用來感測地面反射率，判斷顏色差異。</p>
@@ -302,7 +304,39 @@
 <p><span>過程與心得:</span></p>
 <p><span>使用solvespace繪製零件<br/>建立solid使用cadshape導入base零件<br/>建立hingejoint(1、2、3)&gt;solid link(1、2、3)使用cadshape導入link(1、2、3)零件<br/>link1、2、3分別為press、connector、shooter<br/>各連桿都要透過jointparameters定位旋轉軸位置<br/>建立hingejoint4設定旋轉軸位置<br/>使用solidreference使該旋轉軸導向shooter<br/>建立solid使用cadshape導入stand並建立distancesensor使用cylinder設定感測器位置<br/>建立solid使用shape建立籃球的尺寸位置<br/>建立solid使用cadshape導入floor<br/>各零件設定boundingobject pose或physics<br/>joint1的device建立motor<br/>使用controller選擇程式導入<br/></span></p>
 <p>與HW1、2不同的連桿連接方式一開始需要先想一下是怎麼運作的，以及加入了感測器和地板，但我不知道怎麼把球撿回來。</p>
-<p><a href="/downloads/HW3_41023213.rar">HW3_41023213</a></p><h1>Midterm</h1>
+<p><a href="/downloads/HW3_41023213.rar">HW3_41023213</a></p>
+<p>相關問題</p>
+<p><a href="https://mde.tw/cd2025/content/Stage3.html">https://mde.tw/cd2025/content/Stage3.html</a><span> </span></p>
+<p>Tutorial6<br/>1.Tutorial6 的主要學習主題是什麼？<br/>學習如何使用 e-puck 機器人的攝影機進行影像感知與反應控制。</p>
+<p>2.在 Tutorial6 中，e-puck 機器人新增了哪些裝置？<br/>新增了 Camera 攝影機裝置。</p>
+<p>3.如何在 Webots 中使用攝影機（Camera）？<br/>需在 .wbt 世界檔中加入 Camera 節點，並在程式中啟用。</p>
+<p>4.Camera 需要在程式中如何啟用？<br/>透過 Camera.enable(time_step) 指令啟用。</p>
+<p>5.如何取得攝影機擷取到的影像資料？<br/>使用 Camera.getImage() 方法取得影像。</p>
+<p>6.Tutorial6 中，機器人如何依據攝影機影像做出反應？<br/>根據攝影機辨識到的顏色資訊調整移動方向或行為。</p>
+<p>7.Camera 裝置可以調整哪些參數？<br/>解析度、視野角度（FOV）、影像品質等。</p>
+<p>8.影像解析度的設定會對模擬有什麼影響？<br/>解析度越高越清晰，但會增加運算負擔與降低模擬速度。</p>
+<p>9.如何將攝影機影像儲存成圖片檔？<br/>使用 Camera.saveImage(filename, quality) 方法儲存影像。</p>
+<p>10.若攝影機影像顯示異常，可能的原因有哪些？<br/>可能是未啟用攝影機、參數錯誤或程式中讀取錯誤。</p>
+<p>Tutorial7<br/>1.Tutorial7 的核心任務是什麼？<br/>讓機器人辨識並追蹤特定顏色物體。</p>
+<p>2.在本範例中 e-puck 機器人如何偵測顏色？<br/>透過攝影機擷取影像，再進行影像處理。</p>
+<p>3.如何分析攝影機擷取的影像來辨識特定顏色？<br/>轉換為 HSV 色彩空間並設定位元遮罩範圍。</p>
+<p>4.OpenCV 或其他影像處理函式庫在 Webots 控制器程式中的應用方式？<br/>導入 OpenCV，利用 cv2.inRange() 等函數篩選顏色。</p>
+<p>5.如何將影像中的顏色資訊轉換為機器人行為？<br/>依顏色位置判斷移動方向與速度（如往左或往右轉）。</p>
+<p>6.若要辨識多種顏色，程式需考慮哪些步驟？<br/>為每種顏色定義 HSV 範圍並個別處理與判斷。</p>
+<p>7.如何解決不同光源下顏色偵測的不穩定問題？<br/>進行自動白平衡、光源補償或標準化顏色範圍。</p>
+<p>8.e-puck 機器人如何追蹤影像中的顏色物件？<br/>根據物件在畫面中的位置來調整左右輪速度。</p>
+<p>9.若影像中有多個同色物件，程式如何選擇追蹤目標？<br/>通常選擇面積最大或距離最近的物件作為目標。</p>
+<p>10.Tutorial7 能否應用於現實世界的機器人？需做哪些調整？<br/>可應用，但需改善光線適應性與使用高解析度相機。</p>
+<p>Tutorial8<br/>1.Tutorial8 的主要學習目標是什麼？<br/>學習如何使用 Supervisor 控制模擬流程與管理多機器人。</p>
+<p>2.什麼是 Supervisor？在 Tutorial8 扮演什麼角色？<br/>Supervisor 是一種特殊控制器，可存取與操作模擬中其他物件。</p>
+<p>3.Supervisor 可以進行哪些操作？<br/>移動機器人、讀取位置、重置模擬、監控行為等。</p>
+<p>4.如何在 Supervisor 控制器中存取並控制其他機器人？<br/>使用 getFromDef() 搭配 getField() 取得機器人並進行操作。</p>
+<p>5.如何用 Supervisor 監測機器人是否達到目標區域？<br/>監控機器人位置與目標區域位置並比較距離是否足夠近。</p>
+<p>6.Supervisor 如何重設模擬或重置機器人位置？<br/>使用 reset() 方法重置模擬；或用 setSFVec3f() 改變座標。</p>
+<p>7.Supervisor 能否獲取所有物件的座標與狀態？如何實作？<br/>可以，透過 Node.getPosition() 或 getField() 取得相關資訊。</p>
+<p>8.如何紀錄機器人模擬過程的數據供日後分析？<br/>將數據儲存至檔案（如 CSV）或串接資料分析模組。</p>
+<p>9.Supervisor 可以如何協助自動化測試機器人行為？<br/>可定時觸發測試腳本、記錄結果、重置模擬多次執行。</p>
+<p>10.綜合 Tutorial6~8，請說明感知（感測）、決策（控制器）、監督（Supervisor）三者如何協同運作。<br/>感測器收集資訊，控制器做出反應，Supervisor 管理環境與測試，全體協同達成自主任務。</p><h1>Midterm</h1>
 <p>本課程所繳交的期中成績為學員自評之學習期望成績.</p>
 <p>期中考週的自評期望成績繳交流程:</p>
 <ol>
